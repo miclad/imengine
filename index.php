@@ -71,13 +71,3 @@ try{
 		require TPL_DIR.'layout.php';
 	}
 }
-
-// Comment for git new up
-
-// hehe
-
-// Updated in clone v 2.0
-
-// up in clone one more
-
-?>
