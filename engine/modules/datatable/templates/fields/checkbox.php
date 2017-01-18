@@ -1,0 +1,2 @@
+<input type="hidden" name="<?=$field_name?>" value="0"/>
+<input type="checkbox" name="<?=$field_name?>" value="1" <?if(($f_desc[3][1]&&$this->ent->getRowValue($field)=="")||$this->ent->getRowValue($field)){?>checked<?}?> id="formField<?=$field_name?>"/>

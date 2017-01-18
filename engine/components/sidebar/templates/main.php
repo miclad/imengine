@@ -1,0 +1,1 @@
+<?=Page::includeComponent('banners:main', array('placing' => 'afisha', 'order_by' => 'rand()'))?>

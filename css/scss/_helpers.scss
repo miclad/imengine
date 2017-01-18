@@ -1,0 +1,41 @@
+.float-left{
+	float: left;
+}
+.float-right{
+	float: right;
+}
+.clear,
+.clearer{
+	display: block; 
+	clear: both; 
+	float: none !important;
+}
+.rel-container{
+	position: relative;
+}
+
+.no-margin{
+	margin: 0 !important;
+}
+.no-padding{
+	padding: 0 !important;
+}
+.no-border{
+	border: none !important;
+}
+
+.hidden, .hide{
+	display: none;
+}
+.bold{
+	font-weight: bold;
+}
+.small{
+	font-size: 11px;
+}
+.gray{
+	color: $color-gray;
+}
+.nowrap{
+	white-space: nowrap;
+}

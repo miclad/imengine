@@ -1,0 +1,105 @@
+@mixin sprite-icon($icon) {
+	content: '';
+	@include icon-sprite($icon);
+	display: inline-block;
+}
+
+@mixin links-color($color, $hover){
+	a{
+		color: $color;
+		border-color: $color;
+		&:hover{
+			color: $hover;
+		}
+	}
+}
+
+@mixin links-white{
+	a{
+		color: #fff;
+		border-color: transparent;
+		&:hover{
+			color: #fff;
+		}
+	}
+}
+
+@mixin links-dark{
+	a{
+		color: $color-text;
+		border-color: $color-text;
+		&:hover{
+			color: $color-link;
+		}
+	}
+}
+
+@mixin links-gray{
+	a{
+		color: $color-gray;
+		border-color: $color-gray;
+		&:hover{
+			color: $color-link;
+		}
+	}
+}
+
+@mixin clearfix{
+	
+	//overflow: hidden;
+	
+	/*
+	&:before,
+    &:after {
+        content: "";
+        display: table;
+    }
+	*/
+    &:after {
+		content: "";
+        display: table;
+        clear: both;
+    }
+}
+
+@mixin svg-icon($file){	
+	@include svg('/img/icon/' + $file + '.svg');
+	
+}
+
+@mixin svg($file){
+	background-image: url($file);
+}
+
+@mixin grid-nopad{
+	margin: 0;
+	& > [class*="col-"]{
+		padding: 0;
+		margin: 0;
+	}
+}
+
+@mixin clear-grid{
+	
+	.row{
+		margin: 0;
+		> [class*="col-"]{
+			float: none;
+			width: auto;
+			padding: 0;
+		}
+	}
+	
+}
+
+@mixin circle($size){
+	
+	display: block;
+	@include box-sizing(border-box);
+	width: $size;
+	height: $size;
+	
+	@include border-radius(50%);
+	border: 1px solid #b9b9b9;
+	
+}

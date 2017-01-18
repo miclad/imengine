@@ -1,0 +1,68 @@
+@mixin sprite-icon($icon) {
+	content: '';
+	@include icon-sprite($icon);
+	display: inline-block;
+}
+
+@mixin links-dark{
+	a{
+		color: $color-text;
+		border-color: $color-text;
+		text-decoration: none;
+		&:hover{
+			color: $color-link-hover;
+			border-color: $color-link-hover;
+			text-decoration: none;
+		}
+	}
+}
+
+@mixin links-white{
+	a{
+		color: #fff;
+		border-color: #fff;
+		&:hover{
+			color: $color-link-hover;
+			border-color: $color-link-hover;
+		}
+	}
+}
+
+@mixin links-color($color){
+	a{
+		color: $color;
+		border-color: $color;
+		&:hover{
+			color: $color-link-hover;
+			border-color: $color-link-hover;
+		}
+	}
+}
+
+@mixin font-title{}
+
+@mixin watercolor{
+	background: #80ded7 url('/img/watercolor-blue.jpg');
+}
+
+@mixin watercolor-orange{
+	background: #f97c50 url('/img/watercolor-orange.jpg');
+}
+
+@mixin watercolor-yellow{
+	background: #febe50 url('/img/watercolor-yellow.jpg');
+}
+
+@mixin clearfix{
+	
+	overflow: hidden;
+	
+	&:before,
+    &:after {
+        content: "";
+        display: table;
+    }
+    &:after {
+        clear: both;
+    }
+}

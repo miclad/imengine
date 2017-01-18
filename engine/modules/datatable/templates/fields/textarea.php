@@ -1,0 +1,1 @@
+<textarea name="<?=$field_name?>" <?if($f_desc[3][1]){?> style="<?=isset($f_desc[3][2]) ? 'height:300px;' : 'height:600px;' ?>" class="form-control ta_<?=isset($f_desc[3][2])?"short":"big"?>"<?}else{?> rows="4" class="form-control"<?}?> id="formField<?=$field_name?>"><?=$this->ent->getRowValue($field)?></textarea>

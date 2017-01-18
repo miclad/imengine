@@ -1,0 +1,3 @@
+<a href="http://vkontakte.ru/club30377082" target="_blank"><img src="/img/vkontakte.png"/></a>&nbsp;
+<a href="http://www.facebook.com/sharer.php?u=http://<?=$_SERVER['SERVER_NAME'].$_SERVER['REQUEST_URI']?>&t=<?=$PAGE->getTitle()?>" target="_blank"><img src="/img/facebook.png"/></a>&nbsp;
+<a href="http://twitter.com/home?status=<?=$PAGE->getTitle()?> http://<?=$_SERVER['SERVER_NAME'].$_SERVER['REQUEST_URI']?>" target="_blank"><img src="/img/twitter.png"/></a>

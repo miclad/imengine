@@ -1,0 +1,424 @@
+.grid{
+	
+	&__submit{
+		display: none;
+	}
+	
+	&.sort-mode{
+		
+		.grid__submit{
+			display: block;
+		}
+		
+		+ .grid{
+			padding-top: 40px;
+		}
+		
+	}
+	
+	&__separator{
+		.table{
+			margin-bottom: 10px;
+			th{
+				font-size: 16px;
+				font-weight: bold;
+				color: $color-green;
+			}
+		}
+	}
+	td.grid__separator{
+		background: #fafafa;
+	}
+	
+}
+
+.table{
+	
+	width: 100%;
+	margin-bottom: 20px;
+	
+	> thead > tr > td,
+	> thead > tr > th,
+	> tfoot > tr > td,
+	> tfoot > tr > th,
+	> tbody > tr > td{
+		border-top: 1px solid $border-color;
+		padding: 5px;
+		height: 30px;
+	}
+
+	> tfoot > tr:last-child > td,
+	> tfoot > tr:last-child > th,
+	> tbody > tr:last-child > td{
+		border-bottom: 1px solid $border-color;
+		&.sort{
+			border-bottom: none;
+		}
+	}
+	
+	> thead > tr > td,
+	> thead > tr > th{
+		border-top: none;
+	}
+	
+	> thead{
+		color: $color-gray-lite;
+	}
+	
+	.datarow.with_url{
+		cursor: pointer;
+	}
+	
+	&.table-hover{
+		> tbody > tr{
+			@include transition(background-color $transition-speed-1 ease);
+			&:hover{
+				
+				background: #f7f7f7;
+				
+				> td{
+					border-top: 1px solid $border-color;
+				}
+				
+				&:last-child > td.sort{
+					border-bottom: 1px solid $border-color;
+				}
+				
+				+ tr .sort{
+					border-top: 1px solid $border-color;
+				}
+				
+			}
+		}
+	}
+	
+	.grid--tree &{
+		
+		.sort a.children-toggle{
+			color: #ccc;
+			position: relative;
+			font-size: 17px;
+			&:hover{
+				color: $color-green;
+			}
+			i{
+				display: block;
+				position: absolute;
+				left: 5px;
+				top: 4px;
+				color: #fff;
+				font-size: 10px;
+				&:after{
+					content: '+';
+				}
+			}
+			&.fa-folder-open{
+				i{
+					display: none;
+				}
+			}
+		}
+		
+		.table{
+			margin: 0;
+		}
+		
+		tr:hover{
+			
+			+ .table__row--tree-children{
+				border-top: 1px solid $border-color;
+				
+				> td > div{
+					margin-top: -1px;
+				}
+				
+			}
+			
+			+ .table__row--tree-children.hide + tr > td.sort{
+				border-top: 1px solid $border-color;
+			}
+			
+		}
+		
+		.table__row--tree-children{
+			> td{
+				padding: 0;
+				border-top: 0;
+			}
+			&:hover{
+				background: none;
+				> td{
+					border-top: none;
+				}
+				> td, 
+				+ tr .sort{
+					border-top-color: transparent;
+					border-bottom: none;
+				}
+				&:last-child > td.sort{
+					border-bottom: none;
+				}
+			}
+			
+			.table > tbody > tr:first-child > td.sort{
+				border-top: 1px solid $border-color;
+			}
+			
+		}
+		
+		> tfoot > tr:last-child > td,
+		> tfoot > tr:last-child > th,
+		> tbody > tr:last-child > td{
+			border-bottom: none;
+		}
+		
+		> tbody > tr:hover{
+			
+			&:last-child > td.sort{
+				border-bottom: none;
+			}
+			
+		}
+	}
+	
+	.datarow.selected{
+		
+		@include box-shadow(0 0 8px #ddd);
+		
+		.sort{
+			border-top: 1px solid $border-color;
+		}
+		
+	}
+	
+	.sort{
+		
+		width: 45px;
+		padding: 0;
+		border-top-color: transparent;
+		text-align: center;
+		
+		input{
+			padding: 1px 4px;
+			width: 30px;
+			height: auto;
+			line-height: auto;
+			background: #f9f9f9;
+			color: $color-gray;
+			margin: auto;
+			font-size: 11px;
+			display: none;
+		}
+		
+		.fa{
+			color: #bbb;
+			line-height: 1;
+			font-size: $font-size-large;
+		}
+		
+		+ th,
+		+ td{
+			padding-left: 0;
+		}
+		
+	}
+	
+	.sort-mode &{
+		
+		thead .sort a{
+			color: $color-link;
+		}
+		
+		td.sort{
+		
+			.fa{
+				display: none;
+			}
+
+			input{
+				display: block;
+			}
+		
+		}
+		
+	}
+	
+	thead .sort{
+		
+		.fa{
+			color: inherit;
+			font-size: 13px;
+			top: 1px;
+			position: relative;
+		}
+		
+		a{
+			color: #bbb;
+			&:hover{
+				color: $color-link;
+			}
+		}
+		
+	}
+	
+	.folder-name{
+		
+		@include links-color($color-text, $color-text);
+		font-weight: bold;
+		
+		.fa{
+			color: #ccc;
+			margin-right: 10px;
+			font-size: 1.2em;
+			top: 1px;
+			position: relative;
+		}
+		
+	}
+	
+	.controls{
+		
+		width: 40px;
+		
+		&__wrap{			
+			position: relative;	
+			width: 40px;
+			height: 30px;
+			
+			
+		}
+		
+		&.s-open .controls__body{
+			background: rgba(#fff, 0.9);
+		}
+		
+		&__body{
+			position: absolute;
+			width: 50px;
+			height: 40px;
+			left: -5px;
+			top: -5px;
+		}
+		
+		&__items{
+			display: none;
+			position: absolute;
+			right: 50px;
+			top: 0;
+			height: 40px;
+			padding: 0 15px 0 80px;
+			white-space: nowrap;
+			line-height: 40px;
+			background: #fff;
+			background: linear-gradient(to right, transparent 0px, rgba(#fff, 1) 50px, rgba(#fff, 1) 100%);
+			
+			@include links-color($color-gray, $color-green);
+			
+			a{
+				display: inline-block;
+				margin-right: 15px;
+				&:last-child{
+					margin-right: 0;
+				}
+				
+				.fa{
+					margin-right: 2px;
+				}
+				
+			}
+			
+		}
+		
+		&.s-open .controls__items{
+			display: block;
+		}
+		
+		&__open{
+			
+			display: block;
+			height: 40px;
+			width: 50px;
+			
+			i{
+				position: relative;
+				top: 16px;
+				left: 12px;
+				@include circle(7px);
+
+				&:after,
+				&:before{
+					position: absolute;
+					top: -1px;
+					content: '';
+					@include circle(7px);
+				}
+
+				&:after{
+					left: 9px;
+				}
+				&:before{
+					left: 18px;
+				}
+				
+				&,
+				&:after,
+				&:before{
+					@include transition($transition-speed-1 ease);
+				}
+				
+			}
+			
+		}
+		
+	}
+	
+	&.table-hover > tbody > tr:hover{
+		
+		.controls.s-open{
+		
+			.controls__items{
+				background: #f7f7f7;
+				background: linear-gradient(to right, transparent 0px, rgba(#f7f7f7, 1) 50px, rgba(#f7f7f7, 1) 100%);
+			}
+
+			.controls__body{
+				background: #f7f7f7;
+			}
+		
+		}
+		
+	}
+	
+	tr:hover .controls.s-open .controls__open i,
+	.controls.s-open .controls__open i{
+		&,
+		&:after,
+		&:before{
+			border-color: #b9b9b9;
+			background: #b9b9b9;
+		}
+	}
+	
+	tr:hover .controls{
+		
+		.controls__open i{
+			&,
+			&:after,
+			&:before{
+				border-color: $color-green;
+			}
+		}
+		
+		.controls__open:hover i,
+		&.s-open .controls__open:hover i{
+			&,
+			&:after,
+			&:before{
+				border-color: $color-green;
+				background: $color-green;
+			}
+		}
+		
+	}
+	
+}

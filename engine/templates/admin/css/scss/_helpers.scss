@@ -1,0 +1,58 @@
+.float-left{
+	float: left;
+}
+.float-right{
+	float: right;
+}
+.clear{
+	@include clearfix;
+}
+.rel-container{
+	position: relative;
+}
+
+.no-margin{
+	margin: 0 !important;
+}
+.no-padding{
+	padding: 0 !important;
+}
+.no-border{
+	border: none !important;
+}
+
+.hidden, .hide{
+	display: none;
+}
+.bold{
+	font-weight: bold;
+}
+.small{
+	font-size: 11px;
+}
+
+.center{
+	text-align: center;
+}
+
+.w-100{
+	width: 100%;
+}
+
+.bg-kids{
+	background: #ebf1df;
+}
+.bg-invitro{
+	background: #faf6e9;
+}
+.bg-euromed{	
+	background: #faedd3;
+}
+.w-auto{
+	width: auto;
+}
+
+.red,
+a.red{
+	color: $color-red !important;
+}

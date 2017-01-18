@@ -1,0 +1,3 @@
+<?
+$entInits = array();
+?>

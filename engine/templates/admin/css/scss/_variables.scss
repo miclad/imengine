@@ -1,0 +1,25 @@
+$font-size-normal: 13px;
+$font-size-small: 0.85em;
+$font-size-large: 1.15em;
+
+$color-text: #222;
+$color-gray: #6f6f6f;
+$color-gray-lite: #999;
+$color-red: #ff0000;
+$color-green: #33a754;
+$color-blue: #182bbb;
+$border-color: #ebebeb;
+
+$color-link: $color-green;
+$color-link-hover: darken($color-link, 10%);
+
+$font-normal: 'Roboto';//'Gotham';
+$font-title: 'Playfair Display';
+
+$transition-one: 0.15s ease;
+$transition-two: 0.3s ease;
+
+$outer-padding: 42px;
+$inner-padding: 54px;
+
+$transition-speed-1: 0.3s;

@@ -1,0 +1,38 @@
+.row {
+	@include clearfix;
+	margin-left: -30px;
+	> [class*="col-"]{
+		min-height: 1px;
+		float: left;
+		@include box-sizing(border-box);
+		padding-left: 30px;
+	}
+	
+	&--nopad{
+		margin-left: 0;
+		> [class*="col-"]{
+			padding-left: 0;
+		}
+	}
+	
+}
+
+@for $i from 1 through 12 {
+	.col-#{$i} { width: (8.333333333333332% * $i); }
+}
+
+.col_half { width: 12.5%; }
+
+@for $i from 1 through 12 {
+	.offset-#{$i} { margin-left: (8.333333333333332% * $i); }
+}
+
+.offset_half { margin-left: 12.5%; }
+
+@for $i from 1 through 10 {
+	.margin-#{$i * 10} { margin-top: (10px * $i); }
+}
+
+@for $i from 1 through 10 {
+	.padding-#{$i * 20} { padding-left: (20px * $i); padding-right: (20px * $i); }
+}
